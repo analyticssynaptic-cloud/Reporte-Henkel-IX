@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Henkel GLISS · Intelligence Report IX · 1 de Noviembre 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --p-navy:#241c1c;--p-deep:#a30000;--p-blue:#E1000F;--p-sky:#ff5c5c;--p-aqua:#ff4b4b;--p-mint:#ffdede;
+  --p-fresh:#fff0f0;--p-white:#ffffff;--p-gray:#8a7a7b;--p-gray2:#cdc0c1;
+  --p-border:#ecd8d8;--p-line:#f1e8e8;--p-soft:#f6f5f5;--p-green:#0e7a5f;--p-orange:#a86a1a;
+  --p-red:#7a2020;--p-gold:#a37b3a;--p-plum:#6b4e88;--p-graddark:#7a0000;
+}
+*{box-sizing:border-box;}
+html{-webkit-font-smoothing:antialiased;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--p-soft);color:var(--p-navy);margin:0;padding:0;overflow-x:hidden;letter-spacing:-0.005em;}
+.hero{height:480px;background:radial-gradient(circle at 80% 15%,rgba(255,255,255,.14),transparent 55%),linear-gradient(140deg,var(--p-aqua) 0%,var(--p-blue) 55%,var(--p-graddark) 100%);display:flex;align-items:center;justify-content:center;text-align:center;color:white;position:relative;}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--p-graddark),var(--p-blue),var(--p-sky));}
+.hero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(180deg,transparent,var(--p-soft));}
+.hero-topbar{position:absolute;top:30px;left:50px;right:50px;display:flex;justify-content:space-between;align-items:center;font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.72);font-weight:600;z-index:3;}
+.hero-topbar .brand-mark{display:inline-flex;align-items:center;gap:12px;}
+.hero-topbar .brand-mark .mk{width:32px;height:32px;border:1.5px solid rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85rem;}
+.hero-topbar .meta{display:flex;gap:40px;}
+.hero-topbar .meta div span:first-child{color:rgba(255,255,255,.55);margin-right:8px;}
+.hero-content{position:relative;z-index:2;padding:0 40px;max-width:1080px;}
+.hero .brand-line{font-size:.75rem;letter-spacing:8px;text-transform:uppercase;color:var(--p-fresh);font-weight:700;margin-bottom:22px;}
+.hero h1{font-size:4.6rem;font-weight:900;margin:0;letter-spacing:-3px;line-height:1;text-shadow:0 4px 30px rgba(0,0,0,.30);}
+.hero h1 .lit{font-weight:300;color:rgba(255,255,255,.85);}
+.hero h1 .accent{background:linear-gradient(90deg,#ffffff,var(--p-mint));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero .subtitle{font-size:.9rem;text-transform:uppercase;letter-spacing:9px;margin-top:30px;font-weight:600;color:var(--p-fresh);}
+.hero .hero-facts{display:flex;gap:60px;justify-content:center;margin-top:45px;padding-top:30px;border-top:1px solid rgba(255,255,255,.18);max-width:720px;margin-left:auto;margin-right:auto;}
+.hero .hero-facts div .n{font-size:1.9rem;font-weight:800;color:white;line-height:1;letter-spacing:-1px;}
+.hero .hero-facts div .l{font-size:.66rem;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.72);margin-top:8px;font-weight:600;}
+.container{max-width:1360px;margin:-80px auto 0;padding:0 20px;position:relative;z-index:3;}
+.exec-summary{background:var(--p-white);padding:55px;border-radius:4px;box-shadow:0 25px 55px -10px rgba(26,18,16,.14);margin-bottom:45px;border:1px solid var(--p-border);position:relative;overflow:hidden;}
+.exec-summary::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--p-graddark),var(--p-blue),var(--p-sky));}
+.exec-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--p-line);padding-bottom:24px;margin-bottom:40px;}
+.exec-head .kicker{font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--p-gray);font-weight:700;}
+.exec-head h2{font-size:1.6rem;margin:0;font-weight:800;letter-spacing:-1px;color:var(--p-navy);}
+.exec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:36px 50px;}
+.exec-item{display:flex;gap:20px;}
+.exec-item .ico{width:42px;height:42px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#fdeceb;color:var(--p-blue);border-radius:4px;font-size:1rem;}
+.exec-item h4{margin:0 0 8px;color:var(--p-navy);text-transform:uppercase;font-size:.72rem;font-weight:800;letter-spacing:1.5px;}
+.exec-item p{margin:0;font-size:.9rem;line-height:1.65;color:var(--p-gray);}
+.exec-item p strong{color:var(--p-navy);font-weight:700;}
+.spotlight{background:linear-gradient(140deg,var(--p-aqua) 0%,var(--p-blue) 55%,var(--p-graddark) 100%);color:white;border-radius:4px;padding:40px 50px;margin-bottom:45px;display:grid;grid-template-columns:repeat(5,1fr);gap:30px;box-shadow:0 20px 45px rgba(122,0,0,.25);position:relative;overflow:hidden;}
+.spotlight::after{content:'';position:absolute;top:-120px;right:-120px;width:320px;height:320px;background:radial-gradient(circle,rgba(255,255,255,.16),transparent 70%);border-radius:50%;}
+.sp-stat{text-align:left;border-right:1px solid rgba(255,255,255,.14);padding-right:20px;position:relative;z-index:1;}
+.sp-stat:last-child{border-right:none;}
+.sp-stat .sp-lbl{font-size:.62rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--p-fresh);font-weight:700;margin-bottom:14px;opacity:.9;}
+.sp-stat h2{font-size:2.5rem;font-weight:800;margin:0;color:white;letter-spacing:-1.5px;line-height:1;}
+.sp-stat h2 small{font-size:1rem;font-weight:600;color:rgba(255,255,255,.6);margin-left:4px;}
+.sp-stat .sp-sub{font-size:.75rem;color:rgba(255,255,255,.62);margin-top:12px;line-height:1.5;font-weight:500;}
+.section-hero{display:flex;align-items:baseline;gap:22px;margin:65px 0 6px;}
+.section-hero .num{font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--p-gray);font-weight:800;padding:6px 12px;border:1px solid var(--p-border);border-radius:2px;}
+.section-title{font-size:2.1rem;font-weight:800;text-align:left;color:var(--p-navy);margin:0;letter-spacing:-1.2px;line-height:1.1;}
+.section-title em{font-style:normal;color:var(--p-blue);font-weight:800;}
+.section-sub{color:var(--p-gray);font-size:.94rem;margin:14px 0 32px;max-width:880px;line-height:1.65;}
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:26px;}
+.kpi-card{background:var(--p-white);padding:26px 24px;border-radius:4px;border:1px solid var(--p-border);transition:.2s;position:relative;}
+.kpi-card:hover{border-color:var(--p-blue);transform:translateY(-3px);box-shadow:0 15px 30px rgba(26,18,16,.08);}
+.kpi-card::before{content:'';position:absolute;top:0;left:0;height:2px;width:40px;background:var(--p-blue);}
+.kpi-card .k-ico{width:32px;height:32px;margin-bottom:18px;display:flex;align-items:center;justify-content:center;color:var(--p-blue);font-size:1rem;}
+.kpi-card .k-lbl{font-size:.66rem;font-weight:800;color:var(--p-gray);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;}
+.kpi-card h3{font-size:2.3rem;margin:0;color:var(--p-navy);font-weight:800;letter-spacing:-1.5px;line-height:1;}
+.kpi-card h3 small{font-size:1rem;font-weight:500;color:var(--p-gray);margin-left:3px;}
+.kpi-card .k-note{font-size:.77rem;color:var(--p-gray);margin-top:14px;padding-top:12px;border-top:1px solid var(--p-line);line-height:1.55;}
+.kpi-card.pos::before,.kpi-card.pos h3,.kpi-card.pos .k-ico{color:var(--p-green);}
+.kpi-card.pos::before{background:var(--p-green);}
+.kpi-card.warn::before,.kpi-card.warn h3,.kpi-card.warn .k-ico{color:var(--p-orange);}
+.kpi-card.warn::before{background:var(--p-orange);}
+.chart-box{background:var(--p-white);padding:34px;border-radius:4px;border:1px solid var(--p-border);width:100%;margin-bottom:26px;}
+.chart-box .cb-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
+.chart-box h3{margin:0;font-size:1.1rem;color:var(--p-navy);font-weight:800;letter-spacing:-.5px;}
+.chart-box .cb-tag{font-size:.62rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--p-gray);font-weight:700;}
+.chart-box .cb-sub{font-size:.84rem;color:var(--p-gray);margin:0 0 24px;line-height:1.6;max-width:780px;}
+.chart-container{height:320px;width:100%;position:relative;}
+.chart-split{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:26px;}
+.table-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:30px;}
+.table-container{background:white;padding:30px;border-radius:4px;border:1px solid var(--p-border);}
+.table-container.full{grid-column:1/-1;}
+.table-container h3{margin:0 0 4px;font-size:1.02rem;color:var(--p-navy);font-weight:800;letter-spacing:-.3px;}
+.table-container .tbl-sub{margin:0 0 18px;font-size:.8rem;color:var(--p-gray);line-height:1.5;}
+.table-data{width:100%;border-collapse:collapse;}
+.table-data th{text-align:left;padding:11px 8px 11px 0;color:var(--p-gray);border-bottom:1px solid var(--p-navy);font-size:.63rem;text-transform:uppercase;letter-spacing:2px;font-weight:800;}
+.table-data td{padding:12px 8px 12px 0;border-bottom:1px solid var(--p-line);font-size:.85rem;font-weight:500;color:var(--p-navy);}
+.table-data tr:last-child td{border-bottom:none;border-top:1px solid var(--p-navy);font-weight:800;padding-top:15px;color:var(--p-blue);}
+.table-data .num{text-align:right;font-variant-numeric:tabular-nums;font-weight:700;}
+.table-data.no-total tr:last-child td{border-top:none;border-bottom:1px solid var(--p-line);font-weight:500;color:var(--p-navy);padding-top:12px;}
+.pill{display:inline-block;padding:3px 10px;font-size:.63rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;border-radius:2px;border:1px solid;}
+.pill.accent{background:#fdeceb;color:var(--p-blue);border-color:#f6c9c5;}
+.pill.pos{background:#e0efe9;color:var(--p-green);border-color:#b8dbcc;}
+.strategy-box{background:linear-gradient(140deg,var(--p-aqua) 0%,var(--p-blue) 55%,var(--p-graddark) 100%);color:white;padding:55px;border-radius:4px;margin-bottom:55px;position:relative;overflow:hidden;}
+.strategy-box::before{content:'';position:absolute;top:-80px;right:-80px;width:340px;height:340px;background:radial-gradient(circle,rgba(255,255,255,.14),transparent 70%);border-radius:50%;}
+.strategy-box .kick{font-size:.7rem;letter-spacing:3.5px;text-transform:uppercase;color:var(--p-fresh);font-weight:700;margin-bottom:16px;position:relative;}
+.strategy-box h3{font-size:1.75rem;margin:0 0 12px;color:white;font-weight:800;letter-spacing:-1px;position:relative;}
+.strategy-box .sub{color:rgba(255,255,255,.75);margin:0 0 36px;font-size:.96rem;max-width:720px;line-height:1.65;position:relative;}
+.strat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;position:relative;}
+.strat-item{padding:22px 24px;border-left:2px solid var(--p-fresh);background:rgba(255,255,255,.02);}
+.strat-item h6{color:var(--p-fresh);font-size:.66rem;margin:0 0 10px;text-transform:uppercase;font-weight:800;letter-spacing:2px;}
+.strat-item p{font-size:.86rem;opacity:.9;line-height:1.6;margin:0;color:rgba(255,255,255,.85);}
+.foot{background:linear-gradient(140deg,var(--p-graddark),var(--p-blue) 60%,var(--p-aqua));color:white;padding:80px 0 40px;margin-top:65px;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;}
+.foot-in{max-width:1300px;margin:0 auto;padding:0 40px;}
+.foot-brand{font-size:2.9rem;font-weight:900;letter-spacing:-1.5px;line-height:1;margin:0 0 14px;}
+.foot-brand .accent{background:linear-gradient(90deg,#ffffff,var(--p-mint));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.foot-brand-sub{font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:600;}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);margin-top:40px;font-size:.67rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.42);font-weight:600;}
+@media(max-width:1024px){.exec-grid,.strat-grid,.chart-split,.table-wrapper{grid-template-columns:1fr;}.spotlight{grid-template-columns:1fr 1fr;}.kpi-row{grid-template-columns:1fr 1fr;}.hero h1{font-size:2.8rem;}.hero-topbar{display:none;}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-topbar">
+    <div class="brand-mark"><div class="mk">H</div><span>Henkel GLISS · Intelligence</span></div>
+    <div class="meta">
+      <div><span>Tipo</span><b>Flash Diario</b></div>
+      <div><span>Cobertura</span><b>Nacional</b></div>
+      <div><span>Alcance</span><b>Interno</b></div>
+    </div>
+  </div>
+  <div class="hero-content">
+    <div class="brand-line">Portafolio GLISS · Canal Moderno y Tradicional</div>
+    <h1><span class="lit">Flash</span> <span class="accent">IX</span></h1>
+    <p class="subtitle">Informe Diario · 1 de Noviembre 2026 · FS9 — Día 1</p>
+    <div class="hero-facts">
+      <div><div class="n">12</div><div class="l">Asesoras activas</div></div>
+      <div><div class="n">120</div><div class="l">Unidades vendidas</div></div>
+      <div><div class="n">71</div><div class="l">Premios entregados</div></div>
+      <div><div class="n">5</div><div class="l">Ciudades activas</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <section class="exec-summary">
+    <div class="exec-head">
+      <span class="kicker">1 de noviembre 2026 · Flash Report IX · FS9 día 1</span>
+      <h2>Los cuatro puntos del día</h2>
+    </div>
+    <div class="exec-grid">
+      <div class="exec-item">
+        <div class="ico"><i class="fa-regular fa-map"></i></div>
+        <div>
+          <h4>01 · 12 asesoras activas en 5 ciudades</h4>
+          <p>El 1 de noviembre abrió el FS9 con <strong>12 asesoras ejecutando visitas</strong> en Bogotá (6), Medellín (3), Barranquilla (1), Cali (1) y Bucaramanga (1). Cobertura inmediata en los principales PDVs del canal moderno con <strong>100% de tasa de cierre</strong>.</p>
+        </div>
+      </div>
+      <div class="exec-item">
+        <div class="ico"><i class="fa-solid fa-cash-register"></i></div>
+        <div>
+          <h4>02 · 120 unidades vendidas — 10 uds promedio por asesora</h4>
+          <p>Las 12 asesoras cerraron ventas en <strong>todas sus visitas (100% de cierre)</strong>. La asesora top del día fue <strong>Natali Paz en Éxito Envigado WOW con 22 unidades</strong>. Promedio diario de <strong>10 unidades por gestora</strong>.</p>
+        </div>
+      </div>
+      <div class="exec-item">
+        <div class="ico"><i class="fa-solid fa-gift"></i></div>
+        <div>
+          <h4>03 · 71 premios entregados · 0.59 por unidad</h4>
+          <p>Se entregaron <strong>71 premios</strong> frente a 120 unidades vendidas: <strong>0.59 premios por unidad</strong>. El Scrunchi lidera la entrega con 27 unidades (38% del mix de premios), seguido de la Funda con 24 (34%) y el Cepillo con 12 (17%).</p>
+        </div>
+      </div>
+      <div class="exec-item">
+        <div class="ico"><i class="fa-solid fa-tag"></i></div>
+        <div>
+          <h4>04 · Ultimate Repair lidera el mix de producto</h4>
+          <p>El combo <strong>Shampoo GLISS Ultimate Repair ×400ml + Acondicionador</strong> repite como producto ancla con 12 referencias vendidas. El <strong>GLISS OLEO Oil Elixir 75ml</strong> cierra con 10, confirmando tracción del portafolio de cuidado intensivo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="spotlight">
+    <div class="sp-stat"><div class="sp-lbl">Tasa de cierre</div><h2>100<small>%</small></h2><div class="sp-sub">12 de 12 visitas con venta confirmada</div></div>
+    <div class="sp-stat"><div class="sp-lbl">Unidades día</div><h2>120</div><div class="sp-sub">vs. 4.133 acumulado VIII — FS9 abriendo fuerte</div></div>
+    <div class="sp-stat"><div class="sp-lbl">Premios día</div><h2>71</div><div class="sp-sub">0.59 premios / unidad</div></div>
+    <div class="sp-stat"><div class="sp-lbl">Top gestora</div><h2>22<small>uds</small></h2><div class="sp-sub">Natali Paz · Éxito Envigado WOW · Medellín</div></div>
+    <div class="sp-stat"><div class="sp-lbl">Ciudades</div><h2>5</div><div class="sp-sub">Bogotá · Medellín · Bquilla · Cali · Bcaramanga</div></div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="section-hero"><span class="num">01</span><h2 class="section-title">KPIs del <em>día</em></h2></div>
+  <p class="section-sub">Indicadores clave del 1 de noviembre 2026. Comparativa parcial vs. promedio diario del acumulado VIII (4.133 uds / 332 visitas = 12.4 uds/visita).</p>
+
+  <div class="kpi-row">
+    <div class="kpi-card pos">
+      <div class="k-ico"><i class="fa-solid fa-chart-line"></i></div>
+      <div class="k-lbl">Unidades / Visita</div>
+      <h3>10.0</h3>
+      <div class="k-note">vs. 12.4 promedio VIII. FS9 día 1 · volumen esperado para apertura de fin de semana.</div>
+    </div>
+    <div class="kpi-card">
+      <div class="k-ico"><i class="fa-solid fa-users"></i></div>
+      <div class="k-lbl">Asesoras activas</div>
+      <h3>12</h3>
+      <div class="k-note">Plena cobertura en los 12 PDVs asignados para el FS9.</div>
+    </div>
+    <div class="kpi-card pos">
+      <div class="k-ico"><i class="fa-solid fa-gift"></i></div>
+      <div class="k-lbl">Premios / Unidad</div>
+      <h3>0.59</h3>
+      <div class="k-note">vs. 0.50 promedio VIII. Mayor eficiencia de redención de premios en FS9.</div>
+    </div>
+    <div class="kpi-card">
+      <div class="k-ico"><i class="fa-solid fa-location-dot"></i></div>
+      <div class="k-lbl">PDVs cubiertos</div>
+      <h3>12</h3>
+      <div class="k-note">Éxito WOW, Jumbo y canal tradicional en 5 ciudades.</div>
+    </div>
+  </div>
+
+  <!-- Gráfico ciudades + premios -->
+  <div class="section-hero"><span class="num">02</span><h2 class="section-title">Distribución <em>geográfica</em> y premios</h2></div>
+  <p class="section-sub">Desglose de unidades por ciudad y mix de premios entregados el 1 de noviembre.</p>
+
+  <div class="chart-split">
+    <div class="chart-box">
+      <div class="cb-head"><h3>Unidades por ciudad</h3><span class="cb-tag">01 / Nov 2026</span></div>
+      <p class="cb-sub">Bogotá concentra el 42% de las unidades con 6 asesoras activas en Éxito y Jumbo.</p>
+      <div class="chart-container"><canvas id="ciudadesChart"></canvas></div>
+    </div>
+    <div class="chart-box">
+      <div class="cb-head"><h3>Mix de premios entregados</h3><span class="cb-tag">71 premios totales</span></div>
+      <p class="cb-sub">El Scrunchi lidera con 38% del mix. La Funda sube al segundo lugar con 34%.</p>
+      <div class="chart-container"><canvas id="premiosChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Tabla asesores -->
+  <div class="section-hero"><span class="num">03</span><h2 class="section-title">Detalle por <em>asesora</em></h2></div>
+  <p class="section-sub">Resultado individual del 1 de noviembre: unidades vendidas y premios entregados por gestora y PDV.</p>
+
+  <div class="table-wrapper">
+    <div class="table-container full">
+      <h3>Resultados por asesora — 1 Nov 2026</h3>
+      <p class="tbl-sub">Ordenadas por unidades vendidas descendente. Todas con tasa de cierre 100%.</p>
+      <table class="table-data">
+        <thead>
+          <tr>
+            <th>Asesora</th>
+            <th>Punto de Venta</th>
+            <th>Ciudad</th>
+            <th class="num">Unidades</th>
+            <th class="num">Premios</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Natali Paz David</td><td>Éxito Envigado WOW</td><td>Medellín</td><td class="num">22</td><td class="num">14</td><td><span class="pill accent">Top</span></td></tr>
+          <tr><td>Sara Valero</td><td>Jumbo Calle 80</td><td>Bogotá</td><td class="num">13</td><td class="num">10</td><td><span class="pill pos">Completo</span></td></tr>
+          <tr><td>Laura González</td><td>Jumbo Valle de Lili</td><td>Cali</td><td class="num">12</td><td class="num">7</td><td><span class="pill pos">Completo</span></td></tr>
+          <tr><td>Yicel Grisales</td><td>Éxito Laureles WOW</td><td>Medellín</td><td class="num">10</td><td class="num">5</td><td><span class="pill pos">Completo</span></td></tr>
+          <tr><td>Mariana Rivera</td><td>Éxito Oriental Bcaramanga</td><td>Bucaramanga</td><td class="num">10</td><td class="num">7</td><td><span class="pill pos">Completo</span></td></tr>
+          <tr><td>Diana Vargas</td><td>Jumbo Calle 170</td><td>Bogotá</td><td class="num">10</td><td class="num">6</td><td><span class="pill pos">Completo</span></td></tr>
+          <tr><td>Solene Orozco</td><td>Éxito Barranquilla</td><td>Barranquilla</td><td class="num">16</td><td class="num">10</td><td><span class="pill pos">Completo</span></td></tr>
+          <tr><td>Karen Rodríguez</td><td>Jumbo Hayuelos</td><td>Bogotá</td><td class="num">8</td><td class="num">4</td><td><span class="pill pos">Completo</span></td></tr>
+          <tr><td>Leidy Angel</td><td>Éxito Country</td><td>Bogotá</td><td class="num">6</td><td class="num">2</td><td><span class="pill pos">Completo</span></td></tr>
+          <tr><td>Zuly Rodríguez</td><td>Éxito Chapinero</td><td>Bogotá</td><td class="num">5</td><td class="num">3</td><td><span class="pill pos">Completo</span></td></tr>
+          <tr><td>Deisy Arenas</td><td>Éxito San Antonio</td><td>Medellín</td><td class="num">4</td><td class="num">1</td><td><span class="pill pos">Completo</span></td></tr>
+          <tr><td>Luz Buitrago</td><td>Éxito Villa Mayor WOW</td><td>Bogotá</td><td class="num">4</td><td class="num">2</td><td><span class="pill pos">Completo</span></td></tr>
+          <tr><td><strong>TOTAL</strong></td><td></td><td><strong>5 ciudades</strong></td><td class="num"><strong>120</strong></td><td class="num"><strong>71</strong></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Comparativa -->
+  <div class="chart-box">
+    <div class="cb-head"><h3>Comparativa FS9 día 1 vs. promedio diario VIII</h3><span class="cb-tag">Referencia acumulado</span></div>
+    <p class="cb-sub">El acumulado VIII registró 4.133 uds en 332 visitas durante 8 fines de semana. El FS9 abre con 120 uds / 12 visitas.</p>
+    <div class="chart-container"><canvas id="comparativaChart"></canvas></div>
+  </div>
+
+  <!-- Estrategia -->
+  <div class="strategy-box">
+    <div class="kick">Lectura estratégica · Flash IX</div>
+    <h3>El FS9 abre con 100% de cierre y ratio de premios superior al acumulado</h3>
+    <p class="sub">El primer día del noveno fin de semana consolida la ruta con cobertura completa. El ratio premios/unidad de 0.59 supera el 0.50 del acumulado VIII, indicando mayor activación en punto de venta.</p>
+    <div class="strat-grid">
+      <div class="strat-item">
+        <h6>Bogotá — 6 asesoras · 46 uds</h6>
+        <p>Mayor concentración de equipo. Jumbo Calle 80 (Sara, 13 uds) y Jumbo Calle 170 (Diana, 10 uds) lideran el canal moderno capitalino.</p>
+      </div>
+      <div class="strat-item">
+        <h6>Medellín — 3 asesoras · 36 uds</h6>
+        <p>Natali en Éxito Envigado WOW con 22 uds es la top gestora del día a nivel nacional. Medellín responde con 30% de las unidades totales.</p>
+      </div>
+      <div class="strat-item">
+        <h6>Scrunchi lidera premios (27 uds · 38%)</h6>
+        <p>El accesorios de alto impacto visual sigue siendo el premium más buscado por el consumidor. Confirma su rol como inductor de cierre.</p>
+      </div>
+      <div class="strat-item">
+        <h6>Ultimate Repair ancla el portafolio</h6>
+        <p>12 referencias del combo SHP+ACO Ultimate Repair como producto más vendido del día. Consistente con el patrón del acumulado VIII.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-brand">Henkel <span class="accent">GLISS</span></div>
+    <div class="foot-brand-sub">Intelligence Report IX · Flash Diario · 1 Nov 2026</div>
+    <div class="foot-bottom">
+      <span>Generado por ARIA · Sináptica Analytics · analyticssynaptic@gmail.com</span>
+      <span>Datos: Google Drive · Campaña Henkel 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const R = '#E1000F', RD = '#7a0000', G = '#0e7a5f', O = '#a86a1a';
+
+// Ciudades
+new Chart(document.getElementById('ciudadesChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Bogotá', 'Medellín', 'Barranquilla', 'Cali', 'Bucaramanga'],
+    datasets: [{
+      label: 'Unidades',
+      data: [46, 36, 16, 12, 10],
+      backgroundColor: [R, '#ff5c5c', '#ff8c8c', '#ffb5b5', '#ffd5d5'],
+      borderRadius: 3
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, datalabels: { color: '#fff', font: { weight: 'bold', size: 13 }, anchor: 'center', align: 'center' } },
+    scales: { y: { beginAtZero: true, grid: { color: '#f1e8e8' } }, x: { grid: { display: false } } }
+  },
+  plugins: [ChartDataLabels]
+});
+
+// Premios
+new Chart(document.getElementById('premiosChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Scrunchi (27)', 'Funda (24)', 'Cepillo (12)', 'Gorro (8)'],
+    datasets: [{ data: [27, 24, 12, 8], backgroundColor: [R, '#ff5c5c', '#ff8c8c', '#ffd5d5'], borderWidth: 0 }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'bottom', labels: { font: { size: 11 }, padding: 16 } },
+      datalabels: { color: '#fff', font: { weight: 'bold', size: 12 }, formatter: (v, ctx) => ctx.chart.data.labels[ctx.dataIndex].split(' ')[0] }
+    }
+  },
+  plugins: [ChartDataLabels]
+});
+
+// Comparativa
+new Chart(document.getElementById('comparativaChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Uds / visita', 'Premios / unidad', 'Asesoras activas'],
+    datasets: [
+      { label: 'FS9 Día 1', data: [10.0, 0.59, 12], backgroundColor: R, borderRadius: 3 },
+      { label: 'Promedio diario VIII', data: [12.4, 0.50, 15], backgroundColor: '#ffdede', borderRadius: 3 }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { position: 'top' }, datalabels: { color: '#241c1c', font: { weight: 'bold', size: 11 }, anchor: 'end', align: 'end' } },
+    scales: { y: { beginAtZero: true, grid: { color: '#f1e8e8' } }, x: { grid: { display: false } } }
+  },
+  plugins: [ChartDataLabels]
+});
+</script>
+</body>
+</html>
