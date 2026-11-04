@@ -3,20 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Henkel GLISS · Intelligence Report IX · 1 de Noviembre 2026</title>
+<title>Henkel GLISS · Intelligence Report IX · FS9 Completo — 30 Oct, 31 Oct y 1 Nov 2026</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-:root {
-  --p-navy:#241c1c;--p-deep:#a30000;--p-blue:#E1000F;--p-sky:#ff5c5c;--p-aqua:#ff4b4b;--p-mint:#ffdede;
-  --p-fresh:#fff0f0;--p-white:#ffffff;--p-gray:#8a7a7b;--p-gray2:#cdc0c1;
-  --p-border:#ecd8d8;--p-line:#f1e8e8;--p-soft:#f6f5f5;--p-green:#0e7a5f;--p-orange:#a86a1a;
-  --p-red:#7a2020;--p-gold:#a37b3a;--p-plum:#6b4e88;--p-graddark:#7a0000;
-}
-*{box-sizing:border-box;}
-html{-webkit-font-smoothing:antialiased;}
+:root{--p-navy:#241c1c;--p-deep:#a30000;--p-blue:#E1000F;--p-sky:#ff5c5c;--p-aqua:#ff4b4b;--p-mint:#ffdede;
+--p-fresh:#fff0f0;--p-white:#ffffff;--p-gray:#8a7a7b;--p-gray2:#cdc0c1;
+--p-border:#ecd8d8;--p-line:#f1e8e8;--p-soft:#f6f5f5;--p-green:#0e7a5f;--p-orange:#a86a1a;
+--p-red:#7a2020;--p-gold:#a37b3a;--p-graddark:#7a0000;}
+*{box-sizing:border-box;}html{-webkit-font-smoothing:antialiased;}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--p-soft);color:var(--p-navy);margin:0;padding:0;overflow-x:hidden;letter-spacing:-0.005em;}
 .hero{height:480px;background:radial-gradient(circle at 80% 15%,rgba(255,255,255,.14),transparent 55%),linear-gradient(140deg,var(--p-aqua) 0%,var(--p-blue) 55%,var(--p-graddark) 100%);display:flex;align-items:center;justify-content:center;text-align:center;color:white;position:relative;}
 .hero::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--p-graddark),var(--p-blue),var(--p-sky));}
@@ -94,6 +91,12 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--p-soft);color:v
 .pill{display:inline-block;padding:3px 10px;font-size:.63rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;border-radius:2px;border:1px solid;}
 .pill.accent{background:#fdeceb;color:var(--p-blue);border-color:#f6c9c5;}
 .pill.pos{background:#e0efe9;color:var(--p-green);border-color:#b8dbcc;}
+.pill.warn{background:#fef3e2;color:var(--p-orange);border-color:#f5d9a0;}
+.jornada-header{background:var(--p-navy);color:white;padding:18px 30px;border-radius:4px 4px 0 0;display:flex;justify-content:space-between;align-items:center;margin-bottom:0;}
+.jornada-header .jh-title{font-size:1rem;font-weight:800;letter-spacing:-.3px;}
+.jornada-header .jh-meta{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.65);font-weight:600;}
+.jornada-block{margin-bottom:26px;}
+.jornada-block .table-container{border-radius:0 0 4px 4px;border-top:none;}
 .strategy-box{background:linear-gradient(140deg,var(--p-aqua) 0%,var(--p-blue) 55%,var(--p-graddark) 100%);color:white;padding:55px;border-radius:4px;margin-bottom:55px;position:relative;overflow:hidden;}
 .strategy-box::before{content:'';position:absolute;top:-80px;right:-80px;width:340px;height:340px;background:radial-gradient(circle,rgba(255,255,255,.14),transparent 70%);border-radius:50%;}
 .strategy-box .kick{font-size:.7rem;letter-spacing:3.5px;text-transform:uppercase;color:var(--p-fresh);font-weight:700;margin-bottom:16px;position:relative;}
@@ -118,20 +121,20 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--p-soft);color:v
   <div class="hero-topbar">
     <div class="brand-mark"><div class="mk">H</div><span>Henkel GLISS · Intelligence</span></div>
     <div class="meta">
-      <div><span>Tipo</span><b>Flash Diario</b></div>
+      <div><span>Tipo</span><b>Flash FS9</b></div>
       <div><span>Cobertura</span><b>Nacional</b></div>
-      <div><span>Alcance</span><b>Interno</b></div>
+      <div><span>Jornadas</span><b>3 días</b></div>
     </div>
   </div>
   <div class="hero-content">
     <div class="brand-line">Portafolio GLISS · Canal Moderno y Tradicional</div>
     <h1><span class="lit">Flash</span> <span class="accent">IX</span></h1>
-    <p class="subtitle">Informe Diario · 1 de Noviembre 2026 · FS9 — Día 1</p>
+    <p class="subtitle">FS9 Completo · 30 Oct, 31 Oct y 1 Nov 2026</p>
     <div class="hero-facts">
-      <div><div class="n">12</div><div class="l">Asesoras activas</div></div>
-      <div><div class="n">120</div><div class="l">Unidades vendidas</div></div>
-      <div><div class="n">71</div><div class="l">Premios entregados</div></div>
-      <div><div class="n">5</div><div class="l">Ciudades activas</div></div>
+      <div><div class="n">3</div><div class="l">Jornadas FS9</div></div>
+      <div><div class="n">44</div><div class="l">Registros totales</div></div>
+      <div><div class="n">97.7%</div><div class="l">Tasa de cierre</div></div>
+      <div><div class="n">6</div><div class="l">Ciudades activas</div></div>
     </div>
   </div>
 </header>
@@ -140,100 +143,183 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--p-soft);color:v
 
   <section class="exec-summary">
     <div class="exec-head">
-      <span class="kicker">1 de noviembre 2026 · Flash Report IX · FS9 día 1</span>
-      <h2>Los cuatro puntos del día</h2>
+      <span class="kicker">FS9 · 30 Oct, 31 Oct y 1 Nov 2026 · Flash Report IX</span>
+      <h2>Resumen del fin de semana FS9</h2>
     </div>
     <div class="exec-grid">
       <div class="exec-item">
         <div class="ico"><i class="fa-regular fa-map"></i></div>
         <div>
-          <h4>01 · 12 asesoras activas en 5 ciudades</h4>
-          <p>El 1 de noviembre abrió el FS9 con <strong>12 asesoras ejecutando visitas</strong> en Bogotá (6), Medellín (3), Barranquilla (1), Cali (1) y Bucaramanga (1). Cobertura inmediata en los principales PDVs del canal moderno con <strong>100% de tasa de cierre</strong>.</p>
+          <h4>01 · 44 registros en 3 jornadas y 6 ciudades</h4>
+          <p>El FS9 cubrió <strong>tres jornadas consecutivas</strong>: 18 asesoras el viernes 30 de octubre, 14 el sábado 31 y 12 el domingo 1 de noviembre. Cobertura en <strong>Bogotá, Medellín, Cali, Barranquilla, Bucaramanga y Chía</strong>.</p>
         </div>
       </div>
       <div class="exec-item">
         <div class="ico"><i class="fa-solid fa-cash-register"></i></div>
         <div>
-          <h4>02 · 120 unidades vendidas — 10 uds promedio por asesora</h4>
-          <p>Las 12 asesoras cerraron ventas en <strong>todas sus visitas (100% de cierre)</strong>. La asesora top del día fue <strong>Natali Paz en Éxito Envigado WOW con 22 unidades</strong>. Promedio diario de <strong>10 unidades por gestora</strong>.</p>
+          <h4>02 · 97.7% de tasa de cierre acumulada en FS9</h4>
+          <p>43 de 44 registros cerraron con venta confirmada. <strong>El 31 de octubre logró 100% de cierre</strong> (14/14). El viernes 30 tuvo un único registro sin cierre (Jumbo Santa Ana). El domingo 1 Nov también cerró al 100%.</p>
         </div>
       </div>
       <div class="exec-item">
         <div class="ico"><i class="fa-solid fa-gift"></i></div>
         <div>
-          <h4>03 · 71 premios entregados · 0.59 por unidad</h4>
-          <p>Se entregaron <strong>71 premios</strong> frente a 120 unidades vendidas: <strong>0.59 premios por unidad</strong>. El Scrunchi lidera la entrega con 27 unidades (38% del mix de premios), seguido de la Funda con 24 (34%) y el Cepillo con 12 (17%).</p>
+          <h4>03 · Detalle completo de unidades solo para Nov 1</h4>
+          <p>El registro digital de unidades y premios está disponible para el <strong>1 de noviembre con 120 uds y 71 premios</strong>. Para el 30 y 31 de octubre el Sheet registra cierre sí/no; el detalle de unidades se consolida en el seguimiento FS.</p>
         </div>
       </div>
       <div class="exec-item">
         <div class="ico"><i class="fa-solid fa-tag"></i></div>
         <div>
-          <h4>04 · Ultimate Repair lidera el mix de producto</h4>
-          <p>El combo <strong>Shampoo GLISS Ultimate Repair ×400ml + Acondicionador</strong> repite como producto ancla con 12 referencias vendidas. El <strong>GLISS OLEO Oil Elixir 75ml</strong> cierra con 10, confirmando tracción del portafolio de cuidado intensivo.</p>
+          <h4>04 · Equipo estable con alta rotación de PDVs</h4>
+          <p>El núcleo de asesoras (Yicel, Natali, Mariana, Deisy, Solene, Leidy Carina, Laura, Diana) opera los 3 días en PDVs asignados. <strong>18 PDVs distintos cubiertos el viernes</strong>, máxima cobertura del fin de semana.</p>
         </div>
       </div>
     </div>
   </section>
 
   <div class="spotlight">
-    <div class="sp-stat"><div class="sp-lbl">Tasa de cierre</div><h2>100<small>%</small></h2><div class="sp-sub">12 de 12 visitas con venta confirmada</div></div>
-    <div class="sp-stat"><div class="sp-lbl">Unidades día</div><h2>120</div><div class="sp-sub">vs. 4.133 acumulado VIII — FS9 abriendo fuerte</div></div>
-    <div class="sp-stat"><div class="sp-lbl">Premios día</div><h2>71</div><div class="sp-sub">0.59 premios / unidad</div></div>
-    <div class="sp-stat"><div class="sp-lbl">Top gestora</div><h2>22<small>uds</small></h2><div class="sp-sub">Natali Paz · Éxito Envigado WOW · Medellín</div></div>
-    <div class="sp-stat"><div class="sp-lbl">Ciudades</div><h2>5</div><div class="sp-sub">Bogotá · Medellín · Bquilla · Cali · Bcaramanga</div></div>
+    <div class="sp-stat"><div class="sp-lbl">Registros FS9</div><h2>44</h2><div class="sp-sub">30 Oct (18) · 31 Oct (14) · 1 Nov (12)</div></div>
+    <div class="sp-stat"><div class="sp-lbl">Tasa de cierre</div><h2>97.7<small>%</small></h2><div class="sp-sub">43 de 44 cierres confirmados</div></div>
+    <div class="sp-stat"><div class="sp-lbl">Uds 1 Nov (detalle)</div><h2>120</h2><div class="sp-sub">10 uds promedio · 100% cierre</div></div>
+    <div class="sp-stat"><div class="sp-lbl">Premios 1 Nov</div><h2>71</h2><div class="sp-sub">0.59 premios / unidad</div></div>
+    <div class="sp-stat"><div class="sp-lbl">Ciudades</div><h2>6</h2><div class="sp-sub">Bogotá · Medellín · Cali · Bquilla · Bcaramanga · Chía</div></div>
   </div>
 
   <!-- KPIs -->
-  <div class="section-hero"><span class="num">01</span><h2 class="section-title">KPIs del <em>día</em></h2></div>
-  <p class="section-sub">Indicadores clave del 1 de noviembre 2026. Comparativa parcial vs. promedio diario del acumulado VIII (4.133 uds / 332 visitas = 12.4 uds/visita).</p>
+  <div class="section-hero"><span class="num">01</span><h2 class="section-title">KPIs del <em>FS9</em></h2></div>
+  <p class="section-sub">Indicadores clave de las tres jornadas del Fin de Semana 9. El detalle de unidades y premios corresponde al 1 de noviembre, con datos completos del sistema de gestión.</p>
 
   <div class="kpi-row">
     <div class="kpi-card pos">
       <div class="k-ico"><i class="fa-solid fa-chart-line"></i></div>
-      <div class="k-lbl">Unidades / Visita</div>
-      <h3>10.0</h3>
-      <div class="k-note">vs. 12.4 promedio VIII. FS9 día 1 · volumen esperado para apertura de fin de semana.</div>
+      <div class="k-lbl">Tasa de cierre FS9</div>
+      <h3>97.7<small>%</small></h3>
+      <div class="k-note">43 / 44 registros con venta. Solo 1 sin cierre (Jumbo Santa Ana, 30 Oct).</div>
     </div>
     <div class="kpi-card">
       <div class="k-ico"><i class="fa-solid fa-users"></i></div>
-      <div class="k-lbl">Asesoras activas</div>
-      <h3>12</h3>
-      <div class="k-note">Plena cobertura en los 12 PDVs asignados para el FS9.</div>
+      <div class="k-lbl">Jornadas / Asesoras</div>
+      <h3>3 <small>días</small></h3>
+      <div class="k-note">18 asesoras el viernes · 14 el sábado · 12 el domingo.</div>
     </div>
     <div class="kpi-card pos">
       <div class="k-ico"><i class="fa-solid fa-gift"></i></div>
-      <div class="k-lbl">Premios / Unidad</div>
+      <div class="k-lbl">Premios / Unidad (Nov 1)</div>
       <h3>0.59</h3>
       <div class="k-note">vs. 0.50 promedio VIII. Mayor eficiencia de redención de premios en FS9.</div>
     </div>
-    <div class="kpi-card">
+    <div class="kpi-card pos">
       <div class="k-ico"><i class="fa-solid fa-location-dot"></i></div>
-      <div class="k-lbl">PDVs cubiertos</div>
-      <h3>12</h3>
-      <div class="k-note">Éxito WOW, Jumbo y canal tradicional en 5 ciudades.</div>
+      <div class="k-lbl">PDVs máx. (30 Oct)</div>
+      <h3>18</h3>
+      <div class="k-note">Mayor cobertura del fin de semana. 18 puntos de venta activos el viernes.</div>
     </div>
   </div>
 
-  <!-- Gráfico ciudades + premios -->
-  <div class="section-hero"><span class="num">02</span><h2 class="section-title">Distribución <em>geográfica</em> y premios</h2></div>
-  <p class="section-sub">Desglose de unidades por ciudad y mix de premios entregados el 1 de noviembre.</p>
+  <!-- Gráficos -->
+  <div class="section-hero"><span class="num">02</span><h2 class="section-title">Actividad por <em>jornada y ciudad</em></h2></div>
+  <p class="section-sub">Distribución de registros y ciudades a lo largo de las tres jornadas del FS9.</p>
 
   <div class="chart-split">
     <div class="chart-box">
-      <div class="cb-head"><h3>Unidades por ciudad</h3><span class="cb-tag">01 / Nov 2026</span></div>
-      <p class="cb-sub">Bogotá concentra el 42% de las unidades con 6 asesoras activas en Éxito y Jumbo.</p>
-      <div class="chart-container"><canvas id="ciudadesChart"></canvas></div>
+      <div class="cb-head"><h3>Registros por jornada</h3><span class="cb-tag">FS9 · 3 días</span></div>
+      <p class="cb-sub">El viernes concentra la mayor cobertura con 18 asesoras. El domingo cierra con el equipo más compacto (12) pero 100% de conversión.</p>
+      <div class="chart-container"><canvas id="jornadasChart"></canvas></div>
     </div>
     <div class="chart-box">
-      <div class="cb-head"><h3>Mix de premios entregados</h3><span class="cb-tag">71 premios totales</span></div>
-      <p class="cb-sub">El Scrunchi lidera con 38% del mix. La Funda sube al segundo lugar con 34%.</p>
-      <div class="chart-container"><canvas id="premiosChart"></canvas></div>
+      <div class="cb-head"><h3>Registros por ciudad — FS9 acumulado</h3><span class="cb-tag">44 registros</span></div>
+      <p class="cb-sub">Bogotá concentra el mayor volumen de equipo. Medellín sostiene actividad los 3 días con 4 asesoras habituales.</p>
+      <div class="chart-container"><canvas id="ciudadesChart"></canvas></div>
     </div>
   </div>
 
-  <!-- Tabla asesores -->
-  <div class="section-hero"><span class="num">03</span><h2 class="section-title">Detalle por <em>asesora</em></h2></div>
-  <p class="section-sub">Resultado individual del 1 de noviembre: unidades vendidas y premios entregados por gestora y PDV.</p>
+  <div class="chart-split">
+    <div class="chart-box">
+      <div class="cb-head"><h3>Mix de premios entregados — 1 Nov 2026</h3><span class="cb-tag">71 premios totales</span></div>
+      <p class="cb-sub">El Scrunchie lidera con 38% del mix. La Funda sube al segundo lugar. Datos de premios disponibles para el 1 de noviembre.</p>
+      <div class="chart-container"><canvas id="premiosChart"></canvas></div>
+    </div>
+    <div class="chart-box">
+      <div class="cb-head"><h3>Unidades vendidas por ciudad — 1 Nov 2026</h3><span class="cb-tag">120 unidades</span></div>
+      <p class="cb-sub">Bogotá concentra el 38% de las unidades con 6 asesoras activas en Éxito y Jumbo el domingo 1 de noviembre.</p>
+      <div class="chart-container"><canvas id="ciudadesNov1Chart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- JORNADAS -->
+  <div class="section-hero"><span class="num">03</span><h2 class="section-title">Registro por <em>jornada</em></h2></div>
+  <p class="section-sub">Detalle de asesoras y puntos de venta en cada jornada del FS9. El 30 y 31 de octubre presentan registro de cierre (sí/no) desde la herramienta de campo.</p>
+
+  <!-- Oct 30 -->
+  <div class="jornada-block">
+    <div class="jornada-header">
+      <span class="jh-title">Viernes 30 de Octubre 2026 · FS9 Día 1</span>
+      <span class="jh-meta">18 asesoras · 17 cierres · 94.4%</span>
+    </div>
+    <div class="table-container full" style="border-radius:0 0 4px 4px;border-top:none;">
+      <p class="tbl-sub" style="margin-top:16px;">18 PDVs cubiertos en 6 ciudades. Único registro sin cierre: Jumbo Santa Ana (Bogotá).</p>
+      <table class="table-data no-total">
+        <thead><tr><th>Asesora</th><th>Punto de Venta</th><th>Ciudad</th><th>Estado</th></tr></thead>
+        <tbody>
+<tr><td>Solene Marcela Orozco Galindo</td><td>Farmatodo Viva Barranquilla</td><td>Barranquilla</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Luz Amanda Buitrago Blanco</td><td>Farmatodo Centro Mayor</td><td>Bogotá</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Leidy Carina Angel Rodriguez</td><td>Éxito Villa Mayor WOW</td><td>Bogotá</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Gladys Janeth Raigoso Mosquera</td><td>Éxito Chapinero</td><td>Bogotá</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Leidy Sofía Suárez Forero</td><td>Farmatodo CC Unicentro</td><td>Bogotá</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Leidy Johana Zamudio Moreno</td><td>Farmatodo Galerías</td><td>Bogotá</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Zuly Johanna Rodriguez Velasquez</td><td>Farmatodo Hayuelos</td><td>Bogotá</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Karen Lorena Rodriguez Orjuela</td><td>Jumbo Santafé</td><td>Bogotá</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Darlyn Lorena Salazar Lopez</td><td>Farmatodo Titán</td><td>Bogotá</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Leidy Yulieth Farasica Cortes</td><td>Jumbo Calle 80</td><td>Bogotá</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Jessica Alejandra Lozano Ortiz</td><td>Jumbo Santa Ana</td><td>Bogotá</td><td><span class="pill warn">Sin cierre</span></td></tr>
+<tr><td>Mariana Rivera Román</td><td>Éxito Oriental Bucaramanga CV</td><td>Bucaramanga</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Laura Camila González Madroñero</td><td>Éxito San Fernando</td><td>Cali</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Diana Alejandra Vargas Quintero</td><td>Jumbo Chía</td><td>Chía</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Yicel Mariana Grisales</td><td>Éxito Laureles WOW</td><td>Medellín</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Natali Johanna Paz David</td><td>Farmatodo Santa Fe</td><td>Medellín</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Verónica Salgado Jaramillo</td><td>Farmatodo Vegas</td><td>Medellín</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Deisy Johanna Arenas Loaiza</td><td>Éxito San Antonio</td><td>Medellín</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td><strong>TOTAL</strong></td><td></td><td><strong>6 ciudades</strong></td><td><strong>17 / 18 cierres</strong></td></tr>
+</tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Oct 31 -->
+  <div class="jornada-block">
+    <div class="jornada-header">
+      <span class="jh-title">Sábado 31 de Octubre 2026 · FS9 Día 2</span>
+      <span class="jh-meta">14 asesoras · 14 cierres · 100%</span>
+    </div>
+    <div class="table-container full" style="border-radius:0 0 4px 4px;border-top:none;">
+      <p class="tbl-sub" style="margin-top:16px;">100% de cierre en las 14 visitas del día. Equipo activo en 6 ciudades.</p>
+      <table class="table-data no-total">
+        <thead><tr><th>Asesora</th><th>Punto de Venta</th><th>Ciudad</th><th>Estado</th></tr></thead>
+        <tbody>
+<tr><td>Solene Marcela Orozco Galindo</td><td>Farmatodo Viva Barranquilla</td><td>Barranquilla</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Leidy Sofía Suárez Forero</td><td>Jumbo Carrera 30</td><td>Bogotá</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Luz Amanda Buitrago Blanco</td><td>Éxito Villa Mayor WOW</td><td>Bogotá</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Sara Valero</td><td>Éxito Country</td><td>Bogotá</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Leidy Carina Angel Rodriguez</td><td>Jumbo Suba</td><td>Bogotá</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Diana Alejandra Vargas Quintero</td><td>Los Andes Droguerías Casa Blanca</td><td>Bogotá</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Darlyn Lorena Salazar Lopez</td><td>Jumbo Santafé</td><td>Bogotá</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Mariana Rivera Román</td><td>Éxito Oriental Bucaramanga CV</td><td>Bucaramanga</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Laura Camila González Madroñero</td><td>Éxito San Fernando</td><td>Cali</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Jazleidy Tatiana Garzón Castañeda</td><td>Jumbo Chía</td><td>Chía</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Yicel Mariana Grisales</td><td>Éxito Laureles WOW</td><td>Medellín</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Verónica Salgado Jaramillo</td><td>Éxito Bello</td><td>Medellín</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Natali Johanna Paz David</td><td>Éxito Envigado WOW</td><td>Medellín</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td>Deisy Johanna Arenas Loaiza</td><td>Éxito San Antonio</td><td>Medellín</td><td><span class="pill pos">Cierre</span></td></tr>
+<tr><td><strong>TOTAL</strong></td><td></td><td><strong>6 ciudades</strong></td><td><strong>14 / 14 cierres — 100%</strong></td></tr>
+</tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Nov 1 — detalle completo -->
+  <div class="section-hero"><span class="num">04</span><h2 class="section-title">Detalle completo <em>1 Nov 2026</em></h2></div>
+  <p class="section-sub">Resultado individual del domingo 1 de noviembre con unidades vendidas y premios entregados por asesora. Datos completos del sistema de gestión FS9.</p>
 
   <div class="table-wrapper">
     <div class="table-container full">
@@ -242,22 +328,18 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--p-soft);color:v
       <table class="table-data">
         <thead>
           <tr>
-            <th>Asesora</th>
-            <th>Punto de Venta</th>
-            <th>Ciudad</th>
-            <th class="num">Unidades</th>
-            <th class="num">Premios</th>
-            <th>Estado</th>
+            <th>Asesora</th><th>Punto de Venta</th><th>Ciudad</th>
+            <th class="num">Unidades</th><th class="num">Premios</th><th>Estado</th>
           </tr>
         </thead>
         <tbody>
           <tr><td>Natali Paz David</td><td>Éxito Envigado WOW</td><td>Medellín</td><td class="num">22</td><td class="num">14</td><td><span class="pill accent">Top</span></td></tr>
+          <tr><td>Solene Orozco</td><td>Éxito Barranquilla</td><td>Barranquilla</td><td class="num">16</td><td class="num">10</td><td><span class="pill pos">Completo</span></td></tr>
           <tr><td>Sara Valero</td><td>Jumbo Calle 80</td><td>Bogotá</td><td class="num">13</td><td class="num">10</td><td><span class="pill pos">Completo</span></td></tr>
           <tr><td>Laura González</td><td>Jumbo Valle de Lili</td><td>Cali</td><td class="num">12</td><td class="num">7</td><td><span class="pill pos">Completo</span></td></tr>
           <tr><td>Yicel Grisales</td><td>Éxito Laureles WOW</td><td>Medellín</td><td class="num">10</td><td class="num">5</td><td><span class="pill pos">Completo</span></td></tr>
-          <tr><td>Mariana Rivera</td><td>Éxito Oriental Bcaramanga</td><td>Bucaramanga</td><td class="num">10</td><td class="num">7</td><td><span class="pill pos">Completo</span></td></tr>
+          <tr><td>Mariana Rivera</td><td>Éxito Oriental Bucaramanga</td><td>Bucaramanga</td><td class="num">10</td><td class="num">7</td><td><span class="pill pos">Completo</span></td></tr>
           <tr><td>Diana Vargas</td><td>Jumbo Calle 170</td><td>Bogotá</td><td class="num">10</td><td class="num">6</td><td><span class="pill pos">Completo</span></td></tr>
-          <tr><td>Solene Orozco</td><td>Éxito Barranquilla</td><td>Barranquilla</td><td class="num">16</td><td class="num">10</td><td><span class="pill pos">Completo</span></td></tr>
           <tr><td>Karen Rodríguez</td><td>Jumbo Hayuelos</td><td>Bogotá</td><td class="num">8</td><td class="num">4</td><td><span class="pill pos">Completo</span></td></tr>
           <tr><td>Leidy Angel</td><td>Éxito Country</td><td>Bogotá</td><td class="num">6</td><td class="num">2</td><td><span class="pill pos">Completo</span></td></tr>
           <tr><td>Zuly Rodríguez</td><td>Éxito Chapinero</td><td>Bogotá</td><td class="num">5</td><td class="num">3</td><td><span class="pill pos">Completo</span></td></tr>
@@ -271,106 +353,116 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--p-soft);color:v
 
   <!-- Comparativa -->
   <div class="chart-box">
-    <div class="cb-head"><h3>Comparativa FS9 día 1 vs. promedio diario VIII</h3><span class="cb-tag">Referencia acumulado</span></div>
-    <p class="cb-sub">El acumulado VIII registró 4.133 uds en 332 visitas durante 8 fines de semana. El FS9 abre con 120 uds / 12 visitas.</p>
+    <div class="cb-head"><h3>Comparativa FS9 día 3 (1 Nov) vs. promedio diario VIII</h3><span class="cb-tag">Referencia acumulado</span></div>
+    <p class="cb-sub">El acumulado VIII registró 4.133 uds en 332 visitas durante 8 fines de semana. El FS9 abre con 120 uds / 12 visitas el 1 de noviembre.</p>
     <div class="chart-container"><canvas id="comparativaChart"></canvas></div>
   </div>
 
   <!-- Estrategia -->
   <div class="strategy-box">
-    <div class="kick">Lectura estratégica · Flash IX</div>
-    <h3>El FS9 abre con 100% de cierre y ratio de premios superior al acumulado</h3>
-    <p class="sub">El primer día del noveno fin de semana consolida la ruta con cobertura completa. El ratio premios/unidad de 0.59 supera el 0.50 del acumulado VIII, indicando mayor activación en punto de venta.</p>
+    <div class="kick">Lectura estratégica · Flash IX · FS9 completo</div>
+    <h3>FS9 cierra con 97.7% de tasa de cobertura en 3 jornadas y 6 ciudades</h3>
+    <p class="sub">Las tres jornadas del FS9 confirman la estabilidad operativa del equipo. La cobertura de PDVs fue mayor el viernes (18) y la conversión perfecta el sábado y domingo (100%). Bogotá mantiene el mayor volumen de equipo; Medellín opera con consistencia los 3 días.</p>
     <div class="strat-grid">
       <div class="strat-item">
-        <h6>Bogotá — 6 asesoras · 46 uds</h6>
-        <p>Mayor concentración de equipo. Jumbo Calle 80 (Sara, 13 uds) y Jumbo Calle 170 (Diana, 10 uds) lideran el canal moderno capitalino.</p>
+        <h6>Viernes 30 Oct — máxima cobertura (18 PDVs)</h6>
+        <p>Mayor despliegue del fin de semana. 10 asesoras en Bogotá activan Éxito, Jumbo y Farmatodo. Un único registro sin cierre en Jumbo Santa Ana.</p>
       </div>
       <div class="strat-item">
-        <h6>Medellín — 3 asesoras · 36 uds</h6>
-        <p>Natali en Éxito Envigado WOW con 22 uds es la top gestora del día a nivel nacional. Medellín responde con 30% de las unidades totales.</p>
+        <h6>Sábado 31 Oct — 100% de cierre (14/14)</h6>
+        <p>Jornada perfecta en conversión. El equipo se concentra en Bogotá (6) y Medellín (4), con rotación de PDVs frente al viernes. Sara Valero activa Éxito Country reportando competencia en punto de venta.</p>
       </div>
       <div class="strat-item">
-        <h6>Scrunchi lidera premios (27 uds · 38%)</h6>
-        <p>El accesorios de alto impacto visual sigue siendo el premium más buscado por el consumidor. Confirma su rol como inductor de cierre.</p>
+        <h6>Domingo 1 Nov — 120 uds · Natali Paz top gestora</h6>
+        <p>Natali Paz lidera con 22 unidades en Éxito Envigado WOW. El ratio premios/unidad de 0.59 supera el promedio acumulado del FS8 (0.50). Ultimate Repair ancla el portafolio con 12 referencias.</p>
       </div>
       <div class="strat-item">
-        <h6>Ultimate Repair ancla el portafolio</h6>
-        <p>12 referencias del combo SHP+ACO Ultimate Repair como producto más vendido del día. Consistente con el patrón del acumulado VIII.</p>
+        <h6>Equipo núcleo — operación continua 3 días</h6>
+        <p>Yicel Grisales, Natali Paz, Mariana Rivera, Deisy Arenas, Solene Orozco, Leidy Carina Angel, Laura González y Diana Vargas operan los 3 días, confirmando la solidez del equipo habitual del FS.</p>
       </div>
     </div>
   </div>
 
-</div><!-- /container -->
+</div>
 
 <footer class="foot">
   <div class="foot-in">
     <div class="foot-brand">Henkel <span class="accent">GLISS</span></div>
-    <div class="foot-brand-sub">Intelligence Report IX · Flash Diario · 1 Nov 2026</div>
+    <div class="foot-brand-sub">Intelligence Report IX · FS9 Completo · 30 Oct – 1 Nov 2026</div>
     <div class="foot-bottom">
       <span>Generado por ARIA · Sináptica Analytics · analyticssynaptic@gmail.com</span>
-      <span>Datos: Google Drive · Campaña Henkel 2026</span>
+      <span>Datos: Google Drive · Herramienta Henkel · Campaña 2026</span>
     </div>
   </div>
 </footer>
 
 <script>
-const R = '#E1000F', RD = '#7a0000', G = '#0e7a5f', O = '#a86a1a';
+const R='#E1000F',RD='#7a0000',G='#0e7a5f',O='#a86a1a',GRAY='#8a7a7b';
+const baseOpts={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},datalabels:{display:false}}};
 
-// Ciudades
-new Chart(document.getElementById('ciudadesChart'), {
-  type: 'bar',
-  data: {
-    labels: ['Bogotá', 'Medellín', 'Barranquilla', 'Cali', 'Bucaramanga'],
-    datasets: [{
-      label: 'Unidades',
-      data: [46, 36, 16, 12, 10],
-      backgroundColor: [R, '#ff5c5c', '#ff8c8c', '#ffb5b5', '#ffd5d5'],
-      borderRadius: 3
-    }]
+// Registros por jornada
+new Chart(document.getElementById('jornadasChart'),{
+  type:'bar',
+  data:{
+    labels:['30 Oct (Viernes)','31 Oct (Sábado)','1 Nov (Domingo)'],
+    datasets:[{data:[18,14,12],backgroundColor:[R,'#ff5c5c','#ff8c8c'],borderRadius:3,borderSkipped:false}]
   },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { display: false }, datalabels: { color: '#fff', font: { weight: 'bold', size: 13 }, anchor: 'center', align: 'center' } },
-    scales: { y: { beginAtZero: true, grid: { color: '#f1e8e8' } }, x: { grid: { display: false } } }
-  },
-  plugins: [ChartDataLabels]
+  options:{...baseOpts,scales:{y:{beginAtZero:true,grid:{color:'#f1e8e8'}},x:{grid:{display:false}}}}
 });
 
-// Premios
-new Chart(document.getElementById('premiosChart'), {
-  type: 'doughnut',
-  data: {
-    labels: ['Scrunchi (27)', 'Funda (24)', 'Cepillo (12)', 'Gorro (8)'],
-    datasets: [{ data: [27, 24, 12, 8], backgroundColor: [R, '#ff5c5c', '#ff8c8c', '#ffd5d5'], borderWidth: 0 }]
+// Ciudades acumulado FS9
+new Chart(document.getElementById('ciudadesChart'),{
+  type:'bar',
+  data:{
+    labels:['Bogotá','Medellín','Cali','Barranquilla','Chía','Bucaramanga'],
+    datasets:[{data:[22,12,3,3,3,3],backgroundColor:[R,'#ff5c5c','#ff8c8c','#ffb5b5','#ffd5d5','#ffe8e8'],borderRadius:3,borderSkipped:false}]
   },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: {
-      legend: { position: 'bottom', labels: { font: { size: 11 }, padding: 16 } },
-      datalabels: { color: '#fff', font: { weight: 'bold', size: 12 }, formatter: (v, ctx) => ctx.chart.data.labels[ctx.dataIndex].split(' ')[0] }
+  options:{...baseOpts,scales:{y:{beginAtZero:true,grid:{color:'#f1e8e8'}},x:{grid:{display:false}}}}
+});
+
+// Premios Nov 1
+new Chart(document.getElementById('premiosChart'),{
+  type:'doughnut',
+  data:{
+    labels:['Scrunchie (27)','Funda (24)','Cepillo (12)','Gorro (8)'],
+    datasets:[{data:[27,24,12,8],backgroundColor:[R,'#ff5c5c','#ff8c8c','#ffd5d5'],borderWidth:0}]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{
+      legend:{position:'bottom',labels:{font:{size:11},padding:16}},
+      datalabels:{color:'#fff',font:{weight:'bold',size:12},formatter:(v,ctx)=>ctx.chart.data.labels[ctx.dataIndex].split(' ')[0]}
     }
   },
-  plugins: [ChartDataLabels]
+  plugins:[ChartDataLabels]
+});
+
+// Ciudades Nov 1
+new Chart(document.getElementById('ciudadesNov1Chart'),{
+  type:'bar',
+  data:{
+    labels:['Bogotá','Medellín','Barranquilla','Cali','Bucaramanga'],
+    datasets:[{data:[46,36,16,12,10],backgroundColor:[R,'#ff5c5c','#ff8c8c','#ffb5b5','#ffd5d5'],borderRadius:3}]
+  },
+  options:{...baseOpts,scales:{y:{beginAtZero:true,grid:{color:'#f1e8e8'}},x:{grid:{display:false}}}}
 });
 
 // Comparativa
-new Chart(document.getElementById('comparativaChart'), {
-  type: 'bar',
-  data: {
-    labels: ['Uds / visita', 'Premios / unidad', 'Asesoras activas'],
-    datasets: [
-      { label: 'FS9 Día 1', data: [10.0, 0.59, 12], backgroundColor: R, borderRadius: 3 },
-      { label: 'Promedio diario VIII', data: [12.4, 0.50, 15], backgroundColor: '#ffdede', borderRadius: 3 }
+new Chart(document.getElementById('comparativaChart'),{
+  type:'bar',
+  data:{
+    labels:['Uds / visita','Premios / unidad','Asesoras activas'],
+    datasets:[
+      {label:'FS9 Día 3 (1 Nov)',data:[10.0,0.59,12],backgroundColor:R,borderRadius:3},
+      {label:'Promedio diario VIII',data:[12.4,0.50,15],backgroundColor:'#ffdede',borderRadius:3}
     ]
   },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { position: 'top' }, datalabels: { color: '#241c1c', font: { weight: 'bold', size: 11 }, anchor: 'end', align: 'end' } },
-    scales: { y: { beginAtZero: true, grid: { color: '#f1e8e8' } }, x: { grid: { display: false } } }
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{position:'top'},datalabels:{color:'#241c1c',font:{weight:'bold',size:11},anchor:'end',align:'end'}},
+    scales:{y:{beginAtZero:true,grid:{color:'#f1e8e8'}},x:{grid:{display:false}}}
   },
-  plugins: [ChartDataLabels]
+  plugins:[ChartDataLabels]
 });
 </script>
-</body>
-</html>
+</body></html>
